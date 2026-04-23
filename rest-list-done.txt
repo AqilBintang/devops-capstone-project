@@ -1,0 +1,15 @@
+curl -i -X GET http://127.0.0.1:5000/accounts
+
+HTTP/1.1 200 OK
+Content-Type: application/json
+Content-Length: 200
+
+[
+  {
+    "id": 1,
+    "name": "Bintang",
+    "email": "bintang@email.com",
+    "address": "Indonesia",
+    "phone_number": "08123456789"
+  }
+]
