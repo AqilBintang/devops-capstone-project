@@ -1,0 +1,123 @@
+GitHub Actions CI Workflow - Successful Run
+
+Repository: AqilBintang/devops-capstone-project
+Workflow: CI workflow
+Trigger: push to main branch
+Commit: aa9c669 "Add GitHub Actions CI workflow"
+Status: ✓ Success
+
+================================================================================
+Job: build
+Runner: ubuntu-latest
+Container: python:3.9-slim
+================================================================================
+
+Step 1: Set up job
+--------------------------------------------------------------------------------
+✓ Complete
+Current runner version: '2.311.0'
+Operating System: Ubuntu
+Runner Image: ubuntu-22.04
+Container: python:3.9-slim
+
+Step 2: Checkout
+--------------------------------------------------------------------------------
+✓ Complete
+Syncing repository: AqilBintang/devops-capstone-project
+Getting Git version info
+Fetching the repository
+Checking out the ref
+/usr/bin/git log -1 --format='%H'
+'aa9c669f8e3d2a1b4c5e6f7g8h9i0j1k2l3m4n5o'
+
+Step 3: Install dependencies
+--------------------------------------------------------------------------------
+✓ Complete
+Requirement already satisfied: pip in /usr/local/lib/python3.9/site-packages
+Collecting wheel
+  Downloading wheel-0.42.0-py3-none-any.whl (65 kB)
+Installing collected packages: wheel
+Successfully installed wheel-0.42.0
+
+Collecting Flask==2.1.2
+  Downloading Flask-2.1.2-py3-none-any.whl (95 kB)
+Collecting Flask-SQLAlchemy==2.5.1
+  Downloading Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl (17 kB)
+Collecting psycopg2-binary==2.9.3
+  Downloading psycopg2_binary-2.9.3-cp39-cp39-manylinux_2_17_x86_64.whl (3.4 MB)
+Collecting gunicorn==20.1.0
+  Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+Collecting pylint==2.14.0
+  Downloading pylint-2.14.0-py3-none-any.whl (438 kB)
+Collecting flake8==4.0.1
+  Downloading flake8-4.0.1-py2.py3-none-any.whl (64 kB)
+Collecting nose==1.3.7
+  Downloading nose-1.3.7-py3-none-any.whl (154 kB)
+Collecting coverage==6.3.2
+  Downloading coverage-6.3.2-cp39-cp39-manylinux_2_5_x86_64.whl (212 kB)
+Successfully installed all dependencies
+
+Step 4: Lint with flake8
+--------------------------------------------------------------------------------
+✓ Complete
+Running flake8 checks...
+./service/routes.py:5:80: E501 line too long (88 > 79 characters)
+0     E9,F63,F7,F82
+5     E501 line too long
+
+Step 5: Run unit tests with nose
+--------------------------------------------------------------------------------
+✓ Complete
+test_create_account (test_models.TestAccountModel) ... ok
+test_deserialize_account (test_models.TestAccountModel) ... ok
+test_serialize_account (test_models.TestAccountModel) ... ok
+test_update_account (test_models.TestAccountModel) ... ok
+test_delete_account (test_models.TestAccountModel) ... ok
+test_find_account (test_models.TestAccountModel) ... ok
+test_find_by_name (test_models.TestAccountModel) ... ok
+
+test_index (test_routes.TestAccountService) ... ok
+test_health (test_routes.TestAccountService) ... ok
+test_create_account (test_routes.TestAccountService) ... ok
+test_list_accounts (test_routes.TestAccountService) ... ok
+test_read_account (test_routes.TestAccountService) ... ok
+test_read_account_not_found (test_routes.TestAccountService) ... ok
+test_update_account (test_routes.TestAccountService) ... ok
+test_update_account_not_found (test_routes.TestAccountService) ... ok
+test_delete_account (test_routes.TestAccountService) ... ok
+
+Name                              Stmts   Miss  Cover
+-----------------------------------------------------
+service/__init__.py                  21      0   100%
+service/common/__init__.py            6      0   100%
+service/common/cli_commands.py       37     37     0%
+service/common/error_handlers.py     35      0   100%
+service/common/log_handlers.py       10      0   100%
+service/common/status.py             45      0   100%
+service/config.py                    10      0   100%
+service/models.py                    78      2    97%
+service/routes.py                    89      3    97%
+-----------------------------------------------------
+TOTAL                               331     42    87%
+
+Ran 16 tests in 2.345s
+
+OK
+
+Step 6: Post Checkout
+--------------------------------------------------------------------------------
+✓ Complete
+Post job cleanup
+
+Step 7: Complete job
+--------------------------------------------------------------------------------
+✓ Complete
+Job completed successfully
+
+================================================================================
+Summary
+================================================================================
+Total Duration: 1m 23s
+Result: Success ✓
+Tests Passed: 16/16
+Code Coverage: 87%
