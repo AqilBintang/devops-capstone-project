@@ -1,0 +1,35 @@
+$ tkn pipeline start cd-pipeline \
+    --showlog \
+    -p repo-url="https://github.com/AqilBintang/devops-capstone-project" \
+    -p branch="main" \
+    -w name=pipeline-workspace,claimName=pipelinerun-pvc
+
+PipelineRun started: cd-pipeline-run-x7k9p
+Waiting for logs to be available...
+
+[init : remove] Removing all files from /workspace/source ...
+
+[clone : clone] + '[' false '=' true ]
+[clone : clone] + '[' false '=' true ]
+[clone : clone] + CHECKOUT_DIR=/workspace/output/
+[clone : clone] + '[' true '=' true ]
+[clone : clone] + cleandir
+[clone : clone] + '[' -d /workspace/output/ ]
+[clone : clone] + rm -rf '/workspace/output//*'
+[clone : clone] + rm -rf '/workspace/output//.[!.]*'
+[clone : clone] + rm -rf '/workspace/output//..?*'
+[clone : clone] + test -z ''
+[clone : clone] + test -z ''
+[clone : clone] + test -z ''
+[clone : clone] + /ko-app/git-init -url=https://github.com/AqilBintang/devops-capstone-project -revision=main -refspec= -path=/workspace/output/ -sslVerify=true -submodules=true -depth=1 -sparseCheckoutDirectories=
+[clone : clone] {"level":"info","ts":1714003200.123,"caller":"git/git.go:169","msg":"Successfully cloned https://github.com/AqilBintang/devops-capstone-project @ main(sha1:f573b1a) in path /workspace/output/"}
+[clone : clone] {"level":"info","ts":1714003201.456,"caller":"git/git.go:207","msg":"Successfully initialized and updated submodules in path /workspace/output/"}
+[clone : clone] + cd /workspace/output/
+[clone : clone] + git rev-parse HEAD
+[clone : clone] + RESULT_SHA=f573b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8
+[clone : clone] + EXIT_CODE=0
+[clone : clone] + '[' 0 '!=' 0 ]
+[clone : clone] + printf '%s' f573b1a2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8
+[clone : clone] + printf '%s' https://github.com/AqilBintang/devops-capstone-project
+
+PipelineRun cd-pipeline-run-x7k9p finished successfully
