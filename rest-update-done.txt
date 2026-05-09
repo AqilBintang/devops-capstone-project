@@ -1,13 +1,10 @@
-$ curl -i -X PUT http://localhost:8080/accounts/1 \
+curl -i -X PUT http://localhost:8080/accounts/1 \
   -H "Content-Type: application/json" \
   -d '{"name":"Bintang Update","email":"bintangbaru@email.com","address":"Jakarta","phone_number":"089999999","date_joined":"2024-01-01"}'
 
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 150
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
 
 {
     "address": "Jakarta",
@@ -17,4 +14,3 @@ X-XSS-Protection: 1; mode=block
     "name": "Bintang Update",
     "phone_number": "089999999"
 }
-

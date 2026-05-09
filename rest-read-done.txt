@@ -1,11 +1,8 @@
-$ curl -i -X GET http://localhost:8080/accounts/1
+curl -i -X GET http://localhost:8080/accounts/1
 
 HTTP/1.1 200 OK
 Content-Type: application/json
 Content-Length: 144
-X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN
-X-XSS-Protection: 1; mode=block
 
 {
     "address": "Indonesia",
@@ -15,4 +12,3 @@ X-XSS-Protection: 1; mode=block
     "name": "Bintang",
     "phone_number": "08123456789"
 }
-
