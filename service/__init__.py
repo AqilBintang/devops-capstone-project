@@ -16,7 +16,7 @@ app = Flask(__name__)
 app.config.from_object(config)
 
 # Set up Talisman security headers
-talisman = Talisman(app)
+talisman = Talisman(app, force_https=False)
 
 # Set up CORS policies
 CORS(app)
