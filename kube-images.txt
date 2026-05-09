@@ -1,2 +1,2 @@
-REPOSITORY   TAG       IMAGE ID       CREATED         SIZE
-accounts     1.0       8b3f5e2a1c9d   3 minutes ago   163MB
+IMAGE                             ID             DISK USAGE   CONTENT SIZE   EXTRA
+accounts:1.0                      067de3537b70        326MB         71.9MB        
