@@ -23,8 +23,8 @@ Account Service Tests
   It should not Create an Account when sending the wrong data ... ok
   It should not Create an Account when sending the wrong media type ... ok
 
-Name                               Stmts   Miss  Cover   Missing
-----------------------------------------------------------------
+Name                               Stmts   Miss  Cover
+------------------------------------------------------
 service/__init__.py                   25      0   100%
 service/common/__init__.py             0      0   100%
 service/common/cli_commands.py         7      0   100%
@@ -34,12 +34,14 @@ service/common/status.py              46      0   100%
 service/config.py                     11      0   100%
 service/models.py                     69      2    97%
 service/routes.py                     89      3    97%
-----------------------------------------------------------------
+------------------------------------------------------
 TOTAL                                289      5    98%
 
 Ran 17 tests in 2.534s
 
 OK
 
-CORS header: Access-Control-Allow-Origin is active (flask-cors)
-security headers: X-Content-Type-Options, X-Frame-Options, X-XSS-Protection active (flask-talisman)
+CORS header Access-Control-Allow-Origin is active via flask-cors
+security headers X-Content-Type-Options nosniff is active via flask-talisman
+security headers X-Frame-Options SAMEORIGIN is active via flask-talisman
+security headers X-XSS-Protection 1 mode=block is active via flask-talisman

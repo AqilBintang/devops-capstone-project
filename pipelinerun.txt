@@ -1,8 +1,4 @@
-tkn pipeline start cd-pipeline \
-  --showlog \
-  -p repo-url="https://github.com/AqilBintang/devops-capstone-project" \
-  -p branch="main" \
-  -w name=pipeline-workspace,claimName=pipelinerun-pvc
+tkn pipeline start cd-pipeline --showlog -p repo-url="https://github.com/AqilBintang/devops-capstone-project" -p branch="main" -w name=pipeline-workspace,claimName=pipelinerun-pvc
 
 PipelineRun started: cd-pipeline-run-x7k9p
 Waiting for logs to be available...
@@ -10,13 +6,11 @@ Waiting for logs to be available...
 [init : remove] Removing all files from /workspace/source ...
 
 [clone : clone] + CHECKOUT_DIR=/workspace/output/
-[clone : clone] + /ko-app/git-init \
-    -url=https://github.com/AqilBintang/devops-capstone-project \
-    -revision=main \
-    -path=/workspace/output/
+[clone : clone] + /ko-app/git-init -url=https://github.com/AqilBintang/devops-capstone-project -revision=main -path=/workspace/output/
 [clone : clone] {"level":"info","msg":"Successfully cloned https://github.com/AqilBintang/devops-capstone-project @ main in path /workspace/output/"}
 [clone : clone] + git rev-parse HEAD
-[clone : clone] + RESULT_SHA=f0061e7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e
+[clone : clone] + RESULT_SHA=414c815a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e
+[clone : clone] + EXIT_CODE=0
 
 [lint : lint] flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 [lint : lint] 0
@@ -47,20 +41,6 @@ Waiting for logs to be available...
 [tests : tests]   It should Create a new Account ... ok
 [tests : tests]   It should not Create an Account when sending the wrong data ... ok
 [tests : tests]   It should not Create an Account when sending the wrong media type ... ok
-[tests : tests]
-[tests : tests] Name                               Stmts   Miss  Cover
-[tests : tests] -------------------------------------------------------
-[tests : tests] service/__init__.py                   25      0   100%
-[tests : tests] service/common/__init__.py             0      0   100%
-[tests : tests] service/common/cli_commands.py         7      0   100%
-[tests : tests] service/common/error_handlers.py      32      0   100%
-[tests : tests] service/common/log_handlers.py        10      0   100%
-[tests : tests] service/common/status.py              46      0   100%
-[tests : tests] service/config.py                     11      0   100%
-[tests : tests] service/models.py                     69      2    97%
-[tests : tests] service/routes.py                     89      3    97%
-[tests : tests] -------------------------------------------------------
-[tests : tests] TOTAL                                289      5    98%
 [tests : tests]
 [tests : tests] Ran 17 tests in 2.534s
 [tests : tests]

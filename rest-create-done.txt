@@ -1,6 +1,4 @@
-curl -i -X POST http://localhost:8080/accounts \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Bintang","email":"bintang@email.com","address":"Indonesia","phone_number":"08123456789","date_joined":"2024-01-01"}'
+curl -i -X POST http://localhost:8080/accounts -H "Content-Type: application/json" -d '{"name": "Bintang", "email": "bintang@email.com", "address": "Indonesia", "phone_number": "08123456789", "date_joined": "2024-01-01"}'
 
 HTTP/1.1 201 CREATED
 Content-Type: application/json
@@ -8,10 +6,10 @@ Content-Length: 144
 Location: http://localhost:8080/accounts/1
 
 {
-    "address": "Indonesia",
-    "date_joined": "2024-01-01",
-    "email": "bintang@email.com",
-    "id": 1,
-    "name": "Bintang",
-    "phone_number": "08123456789"
+  "address": "Indonesia",
+  "date_joined": "2024-01-01",
+  "email": "bintang@email.com",
+  "id": 1,
+  "name": "Bintang",
+  "phone_number": "08123456789"
 }
