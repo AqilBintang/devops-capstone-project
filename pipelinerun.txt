@@ -87,3 +87,4 @@ Waiting for logs to be available...
 [tests : tests] OK
 
 PipelineRun cd-pipeline-run-x7k9p has successfully completed
+

@@ -45,3 +45,4 @@ Security Headers (Talisman) and CORS policy are active:
   - X-XSS-Protection: 1; mode=block
   - Strict-Transport-Security: max-age=31556926; includeSubDomains
   - Access-Control-Allow-Origin: * (CORS header enabled via flask-cors)
+

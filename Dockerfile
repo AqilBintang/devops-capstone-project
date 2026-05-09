@@ -22,3 +22,4 @@ EXPOSE $PORT
 
 # Run the service
 CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--access-logfile", "-", "service:app"]
+

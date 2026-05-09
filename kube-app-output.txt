@@ -3,3 +3,4 @@ $ curl http://localhost:8080/
     "name": "Account REST API Service",
     "version": "1.0"
 }
+
