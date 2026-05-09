@@ -1,13 +1,17 @@
-$ curl -i -X GET http://localhost:5000/accounts/1
+$ curl -i -X GET http://localhost:8080/accounts/1
 
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 120
+Content-Length: 144
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
 
 {
-  "id": 1,
-  "name": "Bintang",
-  "email": "bintang@email.com",
-  "address": "Indonesia",
-  "phone_number": "08123456789"
+    "address": "Indonesia",
+    "date_joined": "2024-01-01",
+    "email": "bintang@email.com",
+    "id": 1,
+    "name": "Bintang",
+    "phone_number": "08123456789"
 }

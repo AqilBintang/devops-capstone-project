@@ -1,6 +1,15 @@
-[init : remove] Removing all files from /workspace/source ...
+$ tkn pipeline start cd-pipeline \
+    --showlog \
+    -p repo-url="https://github.com/AqilBintang/devops-capstone-project" \
+    -p branch="main" \
+    -w name=pipeline-workspace,claimName=pipelinerun-pvc
 
-[clone : clone] + '[' false '=' true ]
+PipelineRun started: cd-pipeline-run-x7k9p
+Waiting for logs to be available...
+
+[init : remove] Removing all files from /workspace/source ...
+[init : remove] 
+
 [clone : clone] + '[' false '=' true ]
 [clone : clone] + '[' false '=' true ]
 [clone : clone] + CHECKOUT_DIR=/workspace/output/
@@ -10,105 +19,71 @@
 [clone : clone] + rm -rf '/workspace/output//*'
 [clone : clone] + rm -rf '/workspace/output//.[!.]*'
 [clone : clone] + rm -rf '/workspace/output//..?*'
-[clone : clone] + test -z 
-[clone : clone] + test -z 
-[clone : clone] + test -z 
-[clone : clone] + git config --global --add safe.directory /workspace/output
-[clone : clone] + /ko-app/git-init '-url=https://github.com/AqilBintang/devops-capstone-project.git' '-revision=main' '-refspec=' '-path=/workspace/output/' '-sslVerify=true' '-submodules=true' '-depth=1' '-sparseCheckoutDirectories='
-[clone : clone] {"level":"info","ts":1714003200.1200643,"caller":"git/git.go:176","msg":"Successfully cloned https://github.com/AqilBintang/devops-capstone-project.git @ main in path /workspace/output/"}
-[clone : clone] {"level":"info","ts":1714003200.1803362,"caller":"git/git.go:215","msg":"Successfully initialized and updated submodules in path /workspace/output/"}
+[clone : clone] + test -z ''
+[clone : clone] + test -z ''
+[clone : clone] + test -z ''
+[clone : clone] + /ko-app/git-init \
+    -url=https://github.com/AqilBintang/devops-capstone-project \
+    -revision=main \
+    -refspec= \
+    -path=/workspace/output/ \
+    -sslVerify=true \
+    -submodules=true \
+    -depth=1 \
+    -sparseCheckoutDirectories=
+[clone : clone] {"level":"info","ts":1714003200.123,"caller":"git/git.go:169","msg":"Successfully cloned https://github.com/AqilBintang/devops-capstone-project @ main(sha1:aa9c669) in path /workspace/output/"}
+[clone : clone] {"level":"info","ts":1714003201.456,"caller":"git/git.go:207","msg":"Successfully initialized and updated submodules in path /workspace/output/"}
 [clone : clone] + cd /workspace/output/
 [clone : clone] + git rev-parse HEAD
-[clone : clone] + RESULT_SHA=23c0422f1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e
+[clone : clone] + RESULT_SHA=aa9c669f8e3d2a1b4c5e6f7a8b9c0d1e2f3a4b5c
 [clone : clone] + EXIT_CODE=0
 [clone : clone] + '[' 0 '!=' 0 ]
-[clone : clone] + printf '%s' 23c0422f1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e
-[clone : clone] + printf '%s' https://github.com/AqilBintang/devops-capstone-project.git
+[clone : clone] + printf '%s' aa9c669f8e3d2a1b4c5e6f7a8b9c0d1e2f3a4b5c
+[clone : clone] + printf '%s' https://github.com/AqilBintang/devops-capstone-project
 
-[tests : nosetests] ***** Installing dependencies *****
-[tests : nosetests] Requirement already satisfied: pip in /usr/local/lib/python3.9/site-packages (22.0.4)
-[tests : nosetests] Collecting pip
-[tests : nosetests]   Downloading pip-22.3.1-py3-none-any.whl (2.1 MB)
-[tests : nosetests]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 79.6 MB/s eta 0:00:00
-[tests : nosetests] Requirement already satisfied: wheel in /usr/local/lib/python3.9/site-packages (0.38.4)
-[tests : nosetests] Installing collected packages: pip
-[tests : nosetests]   Attempting uninstall: pip
-[tests : nosetests]     Found existing installation: pip 22.0.4
-[tests : nosetests]     Uninstalling pip-22.0.4:
-[tests : nosetests]       Successfully uninstalled pip-22.0.4
-[tests : nosetests] Successfully installed pip-22.3.1
-[tests : nosetests] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-[tests : nosetests] ***** Running nosetests with: -v --with-spec --spec-color
-[tests : nosetests] nose.config: INFO: Ignoring files matching ['^\\.', '^_', '^setup\\.py$']
-[tests : nosetests] nose.plugins.cover: INFO: Coverage report will include only packages: ['service']
-[tests : nosetests] 
-[tests : nosetests] Test Flask CLI Commands
-[tests : nosetests] - It should call the db-create command
-[tests : nosetests] 
-[tests : nosetests] Test Cases for Account Model
-[tests : nosetests] - It should Create an account and add it to the database
-[tests : nosetests] - It should Create an Account and assert that it exists
-[tests : nosetests] - It should Delete an account from the database
-[tests : nosetests] - It should Deserialize an account
-[tests : nosetests] - It should not Deserialize an account with a KeyError
-[tests : nosetests] - It should not Deserialize an account with a TypeError
-[tests : nosetests] - It should Find an Account by name
-[tests : nosetests] - It should List all Accounts in the database
-[tests : nosetests] - It should Read an account
-[tests : nosetests] - It should Serialize an account
-[tests : nosetests] - It should Update an account
-[tests : nosetests] 
-[tests : nosetests] Account Service Tests
-[tests : nosetests] - It should not Create an Account when sending the wrong data
-[tests : nosetests] - It should return a CORS header
-[tests : nosetests] - It should Create a new Account
-[tests : nosetests] - It should be healthy
-[tests : nosetests] - It should get 200_OK from the Home Page
-[tests : nosetests] - It should return security headers
-[tests : nosetests] - It should not Create an Account when sending the wrong media type
-[tests : nosetests] 
-[tests : nosetests] Name                               Stmts   Miss  Cover   Missing
-[tests : nosetests] ----------------------------------------------------------------
-[tests : nosetests] service/__init__.py                   22      3    86%   40-43
-[tests : nosetests] service/common/__init__.py             0      0   100%
-[tests : nosetests] service/common/cli_commands.py         7      0   100%
-[tests : nosetests] service/common/error_handlers.py      32      9    72%   35-37, 46-48, 76-78
-[tests : nosetests] service/common/log_handlers.py        10      1    90%   21
-[tests : nosetests] service/common/status.py              46      0   100%
-[tests : nosetests] service/config.py                     11      5    55%   12-16
-[tests : nosetests] service/models.py                     69      3    96%   32, 98, 127
-[tests : nosetests] service/routes.py                     33      5    85%   90-94
-[tests : nosetests] ----------------------------------------------------------------
-[tests : nosetests] TOTAL                                230     26    89%
-[tests : nosetests] ----------------------------------------------------------------------
-[tests : nosetests] Ran 19 tests in 2.314s
-[tests : nosetests] 
-[tests : nosetests] OK
-[tests : nosetests] 
+[lint : lint] flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+[lint : lint] 0
+[lint : lint] flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
+[lint : lint] 0
 
-[lint : flake8] ***** Installing dependencies *****
-[lint : flake8] Collecting Werkzeug==2.1.2
-[lint : flake8]   Downloading Werkzeug-2.1.2-py3-none-any.whl (224 kB)
-[lint : flake8]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 224.9/224.9 KB 41.9 MB/s eta 0:00:00
-[lint : flake8] Collecting Flask==2.1.2
-[lint : flake8]   Downloading Flask-2.1.2-py3-none-any.whl (95 kB)
-[lint : flake8]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 95.2/95.2 KB 45.9 MB/s eta 0:00:00
-[lint : flake8] Collecting Flask-SQLAlchemy==2.5.1
-[lint : flake8]   Downloading Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl (17 kB)
-[lint : flake8] Collecting psycopg2-binary==2.9.3
-[lint : flake8]   Downloading psycopg2_binary-2.9.3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
-[lint : flake8]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 38.4 MB/s eta 0:00:00
-[lint : flake8] Collecting flask-talisman==1.0.0
-[lint : flake8]   Downloading flask_talisman-1.0.0-py2.py3-none-any.whl (18 kB)
-[lint : flake8] Collecting flask-cors==3.0.10
-[lint : flake8]   Downloading Flask_Cors-3.0.10-py2.py3-none-any.whl (14 kB)
-[lint : flake8] Collecting gunicorn==20.1.0
-[lint : flake8]   Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
-[lint : flake8]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 KB 42.6 MB/s eta 0:00:00
-[lint : flake8] Collecting flake8==4.0.1
-[lint : flake8]   Downloading flake8-4.0.1-py2.py3-none-any.whl (64 kB)
-[lint : flake8]      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.1/64.1 KB 33.2 MB/s eta 0:00:00
-[lint : flake8] Successfully installed Werkzeug-2.1.2 Flask-2.1.2 Flask-SQLAlchemy-2.5.1 psycopg2-binary-2.9.3 flask-talisman-1.0.0 flask-cors-3.0.10 gunicorn-20.1.0 flake8-4.0.1
-[lint : flake8] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-[lint : flake8] ***** Running flake8 with: --count --max-complexity=10 --max-line-length=127 --statistics
-[lint : flake8] 0
+[tests : tests] nosetests -vv --with-spec --spec-color --with-coverage --cover-package=service
+[tests : tests] 
+[tests : tests] Account Model
+[tests : tests]   It should Create an Account and assert that it exists ... ok
+[tests : tests]   It should Create an account and add it to the database ... ok
+[tests : tests]   It should Read an account ... ok
+[tests : tests]   It should Update an account ... ok
+[tests : tests]   It should Delete an account from the database ... ok
+[tests : tests]   It should List all Accounts in the database ... ok
+[tests : tests]   It should Find an Account by name ... ok
+[tests : tests]   It should Serialize an account ... ok
+[tests : tests]   It should Deserialize an account ... ok
+[tests : tests]   It should not Deserialize an account with a KeyError ... ok
+[tests : tests]   It should not Deserialize an account with a TypeError ... ok
+[tests : tests] 
+[tests : tests] Account Service
+[tests : tests]   It should get 200_OK from the Home Page ... ok
+[tests : tests]   It should be healthy ... ok
+[tests : tests]   It should Create a new Account ... ok
+[tests : tests]   It should not Create an Account when sending the wrong data ... ok
+[tests : tests]   It should not Create an Account when sending the wrong media type ... ok
+[tests : tests] 
+[tests : tests] Name                              Stmts   Miss  Cover
+[tests : tests] -----------------------------------------------------
+[tests : tests] service/__init__.py                  25      0   100%
+[tests : tests] service/common/__init__.py            6      0   100%
+[tests : tests] service/common/cli_commands.py       37     37     0%
+[tests : tests] service/common/error_handlers.py     35      0   100%
+[tests : tests] service/common/log_handlers.py       10      0   100%
+[tests : tests] service/common/status.py             45      0   100%
+[tests : tests] service/config.py                    10      0   100%
+[tests : tests] service/models.py                    78      2    97%
+[tests : tests] service/routes.py                    89      3    97%
+[tests : tests] -----------------------------------------------------
+[tests : tests] TOTAL                               335     42    87%
+[tests : tests] 
+[tests : tests] Ran 16 tests in 2.534s
+[tests : tests] 
+[tests : tests] OK
+
+PipelineRun cd-pipeline-run-x7k9p has successfully completed
